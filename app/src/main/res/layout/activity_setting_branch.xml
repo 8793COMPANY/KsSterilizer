@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingBranch"
+    android:orientation="vertical"
+    android:background="#f8f8f8"
+    android:weightSum="1280">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:weightSum="720"
+        android:background="@drawable/setting_top_title">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="50"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="54"
+            android:weightSum="90"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="18"/>
+
+            <ImageButton
+                android:id="@+id/setting_back_btn"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="54"
+                android:background="@drawable/setting_back_btn" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="18"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="616"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/setting_machine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"
+        android:background="@drawable/setting_machine"/>
+
+    <ImageButton
+        android:id="@+id/setting_uv_delay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"
+        android:background="@drawable/setting_uv_delay"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"/>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="130"
+        android:background="@drawable/setting_version"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="750"/>
+</LinearLayout>

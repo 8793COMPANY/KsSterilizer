@@ -130,14 +130,63 @@
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="206"/>
+            android:layout_weight="200"/>
 
         <ImageButton
+            android:visibility="visible"
             android:id="@+id/mc_power_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="330"
+            android:layout_weight="336"
             android:background="@drawable/mc_power_off"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/mc_timer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="336"
+            android:weightSum="336"
+            android:orientation="horizontal"
+            android:background="@drawable/mc_uv_min_circle">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="69"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="182"
+                android:weightSum="336"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="107"/>
+
+                <TextView
+                    android:id="@+id/mc_timer_string"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="90"
+                    android:textColor="#272727"
+                    android:text="00:00"
+                    android:textSize="30sp"
+                    android:gravity="center" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="139"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="85"/>
+        </LinearLayout>
 
         <View
             android:layout_width="0dp"

@@ -3,8 +3,8 @@
     package="com.corporation8793.kssterilizer">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name = "android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".Application"
@@ -15,12 +15,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:screenOrientation="portrait"
+            android:name=".SettingUV_Delay"
+            android:exported="true" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SettingMachineListView"
+            android:exported="true" />
+        <activity
+            android:screenOrientation="portrait"
+            android:name=".SettingBranch"
+            android:exported="true" />
+        <activity
+            android:screenOrientation="portrait"
             android:name=".MainControl"
             android:exported="true" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".Login"
             android:exported="true" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,6 +41,8 @@ public class Application extends android.app.Application {
 
     public int s1_flag = 0;
     public int dm_level = 0;
+    public boolean uv_ready = false;
+    public String conversionTime = "000001";
 
     @Override
     public void onCreate() {
@@ -60,6 +63,8 @@ public class Application extends android.app.Application {
             if(connectedThread != null) {
                 connectedThread.write("0");
                 state[0] = !state[0];
+
+                init();
             }
         }
     }
@@ -72,11 +77,14 @@ public class Application extends android.app.Application {
 
                     if (s1_flag < 3) {
                         state[1] = true;
-                        s1_flag += s1_flag;
+                        s1_flag += 1;
                     } else {
                         state[1] = false;
                         s1_flag = 0;
                     }
+
+                    Log.e("Application", "clickLED state: " + state[1]);
+                    Log.e("Application", "clickLED s1_flag: " + s1_flag);
                 }
             }
         }
@@ -93,25 +101,54 @@ public class Application extends android.app.Application {
         }
     }
 
-    void uv_delay_plus() {
+    boolean uv_delay_plus() {
+        boolean b = false;
         if(state[0]) {
             if (btAdapter != null) {
                 if(connectedThread != null) {
                     connectedThread.write("3");
-                    dm_level += dm_level;
+                    if (dm_level < 5) {
+                        dm_level += 1;
+                        b = true;
+                    } else {
+                        dm_level = 0;
+                        b = false;
+                    }
+
+                    Log.e("Application", "clickLED dm_level: " + dm_level);
                 }
             }
         }
+        return b;
     }
 
-    void uv_delay_minus() {
+    boolean uv_delay_minus() {
+        boolean b = false;
         if(state[0]) {
             if (btAdapter != null) {
                 if(connectedThread != null) {
                     connectedThread.write("4");
-                    dm_level -= dm_level;
+                    if (dm_level > 0) {
+                        dm_level -= 1;
+                        b = true;
+                    } else {
+                        dm_level = 0;
+                        b = false;
+                    }
+
+                    Log.e("Application", "clickLED dm_level: " + dm_level);
                 }
             }
         }
+        return b;
+    }
+
+    void init() {
+        state[1] = false;
+        state[2] = false;
+        s1_flag = 0;
+        dm_level = 0;
+        uv_ready = false;
+        conversionTime = "000001";
     }
 }
