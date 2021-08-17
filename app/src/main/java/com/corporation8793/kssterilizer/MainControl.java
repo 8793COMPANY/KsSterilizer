@@ -432,11 +432,11 @@ public class MainControl extends AppCompatActivity {
                 mc_timer_string.setText("00:00");
                 application.state[2] = false;
 
-                new Handler().postDelayed(() -> {
-                    if (!application.uv_ready) {
+                if (!application.uv_ready && application.state[0]) {
+                    new Handler().postDelayed(() -> {
                         initClock();
-                    }
-                }, 2000);
+                    }, 2000);
+                }
             }
         }.start();
     }
