@@ -101,7 +101,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="686"
+        android:layout_weight="1056"
         android:weightSum="720">
 
         <View
@@ -112,18 +112,16 @@
         <ListView
             android:id="@+id/machine_lv"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="600"/>
+            android:layout_height="wrap_content"
+            android:layout_weight="600"
+            android:dividerHeight="1dp"
+            android:divider="#00000000"
+            android:scrollbars="none" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="60"/>
     </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="370"/>
 
 </LinearLayout>

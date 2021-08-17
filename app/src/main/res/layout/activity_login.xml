@@ -74,6 +74,7 @@
                 android:layout_weight="384"
                 android:textSize="13sp"
                 android:maxLines="1"
+                android:inputType="text"
                 android:maxLength="8"
                 android:textColor="#909090"
                 android:background="@null"
