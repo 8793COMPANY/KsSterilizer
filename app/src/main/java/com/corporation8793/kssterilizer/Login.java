@@ -40,6 +40,7 @@ public class Login extends AppCompatActivity {
 
         if (login_auto_b) {
             login_auto_click();
+            login_input_init_btn.setVisibility(View.VISIBLE);
             login_input.setText(preferenceUtil.getStringExtra("machine_num"));
         }
 

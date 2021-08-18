@@ -11,36 +11,36 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="312"></View>
+        android:layout_weight="292"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="176"
+        android:layout_weight="216"
         android:orientation="horizontal"
         android:weightSum="720">
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="272"></View>
+            android:layout_weight="252"></View>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="176"
+            android:layout_weight="216"
             android:foreground="@drawable/logo"/>
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="272"></View>
+            android:layout_weight="252"></View>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="36"></View>
+        android:layout_weight="16"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="10"
         android:orientation="horizontal"
         android:weightSum="720">
 

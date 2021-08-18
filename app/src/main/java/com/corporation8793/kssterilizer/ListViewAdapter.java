@@ -54,6 +54,7 @@ public class ListViewAdapter extends BaseAdapter {
         final View dialogView = inflater.inflate(R.layout.add_dialog, null);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
+        dialog.getWindow().getDecorView().setBackgroundResource(android.R.color.transparent);
 
         ImageButton mad_close_btn, mad_ok_btn;
         EditText mad_input;

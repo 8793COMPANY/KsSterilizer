@@ -12,13 +12,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="90"
+        android:layout_weight="100"
         android:background="@drawable/mc_top_title" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="34"/>
+        android:layout_weight="20"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="28"/>
+            android:layout_weight="26"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -118,12 +118,12 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="82"/>
+        android:layout_weight="76" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="330"
+        android:layout_weight="336"
         android:orientation="horizontal"
         android:weightSum="720">
 
@@ -197,68 +197,68 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="28"/>
+        android:layout_weight="22"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="60"
+        android:layout_weight="90"
         android:orientation="horizontal"
         android:weightSum="720">
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="245"/>
+            android:layout_weight="239"/>
 
         <ImageButton
             android:id="@+id/mc_power_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="230"
+            android:layout_weight="256"
             android:background="@drawable/mc_power_on_2"/>
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="245"/>
+            android:layout_weight="225"/>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="94"/>
+        android:layout_weight="64"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="294"
+        android:layout_weight="300"
         android:orientation="horizontal"
         android:weightSum="720">
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="82"/>
+            android:layout_weight="76"/>
 
         <ImageButton
             android:id="@+id/mc_led_mode"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="278"
+            android:layout_weight="284"
             android:background="@drawable/mc_led_mode_off"
             />
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="24"/>
+            android:layout_weight="18"/>
 
         <ImageButton
             android:id="@+id/mc_uv_mode"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="278"
+            android:layout_weight="284"
             android:background="@drawable/mc_uv_mode_off"
             />
 
@@ -271,5 +271,5 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="106"></View>
+        android:layout_weight="156"></View>
 </LinearLayout>

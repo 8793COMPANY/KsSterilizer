@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="90"
+        android:layout_weight="100"
         android:weightSum="720"
         android:background="@drawable/setting_top_title">
 
@@ -25,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="54"
-            android:weightSum="90"
+            android:weightSum="100"
             android:orientation="vertical">
 
             <View
@@ -43,7 +43,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="18"/>
+                android:layout_weight="28"/>
 
         </LinearLayout>
 
@@ -82,5 +82,5 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="750"/>
+        android:layout_weight="742"/>
 </LinearLayout>

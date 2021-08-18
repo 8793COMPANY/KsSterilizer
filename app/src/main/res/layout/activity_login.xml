@@ -107,35 +107,42 @@
             android:layout_weight="100"></View>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="19.6"></View>
-
     <LinearLayout
         android:id="@+id/login_err"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="30"
-        android:orientation="horizontal"
-        android:weightSum="720">
+        android:layout_weight="49.6"
+        android:orientation="vertical">
 
         <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="116"></View>
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="19.6"></View>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="290"
-            android:background="@drawable/login_err"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:orientation="horizontal"
+            android:weightSum="720">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="314"></View>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="116"></View>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="290"
+                android:background="@drawable/login_err"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="314"></View>
+        </LinearLayout>
     </LinearLayout>
 
     <View
@@ -172,25 +179,25 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="58"></View>
+        android:layout_weight="52"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="114"
+        android:layout_weight="120"
         android:orientation="horizontal"
         android:weightSum="720">
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="100"></View>
+            android:layout_weight="94"></View>
 
         <ImageButton
             android:id="@+id/login_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="542"
+            android:layout_weight="548"
             android:background="@drawable/login_btn"/>
 
         <View
@@ -202,5 +209,5 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="258"></View>
+        android:layout_weight="310"></View>
 </LinearLayout>

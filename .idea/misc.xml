@@ -6,12 +6,12 @@
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/drawable/loading_progress.xml" value="0.36041666666666666" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/drawable/shadow.xml" value="0.36041666666666666" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_login.xml" value="0.5" />
-        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_main_control.xml" value="0.5" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_setting_branch.xml" value="0.5" />
-        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_setting_machine_list_view.xml" value="0.33" />
-        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_setting_uv_delay.xml" value="0.5" />
-        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/add_dialog.xml" value="0.75" />
+        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_setting_machine_list_view.xml" value="0.25" />
+        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/activity_setting_uv_delay.xml" value="0.25" />
+        <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/add_dialog.xml" value="0.5" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/item.xml" value="0.67" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/item2.xml" value="0.51015625" />
         <entry key="..\:/DONG/Documents/AndroidStudioProjects/JavaProject/KsSterilizer/app/src/main/res/layout/machine.xml" value="0.5" />
