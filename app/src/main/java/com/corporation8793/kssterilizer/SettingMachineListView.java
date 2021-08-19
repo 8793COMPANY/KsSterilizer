@@ -37,6 +37,7 @@ public class SettingMachineListView extends AppCompatActivity {
 
         setting_done_btn.setOnClickListener(v -> {
             // 설정값 저장 //단 OFF 되면 초기화
+            finish();
         });
 
         setting_check_all.setOnClickListener(v -> {

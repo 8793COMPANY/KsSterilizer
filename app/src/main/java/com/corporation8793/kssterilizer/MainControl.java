@@ -1,6 +1,7 @@
 package com.corporation8793.kssterilizer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -36,7 +37,7 @@ public class MainControl extends AppCompatActivity {
     Application application;
 
     ImageButton mc_power_1, mc_power_2, mc_led_mode, mc_uv_mode, mc_bt_btn, mc_setting_btn;
-    LinearLayout mc_timer;
+    ConstraintLayout mc_timer;
     TextView mc_timer_string;
 
     AlertDialog.Builder builder;
@@ -53,7 +54,7 @@ public class MainControl extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_control);
+        setContentView(R.layout.activity_main_control_2);
 
         application = (Application) getApplication();
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -133,7 +134,7 @@ public class MainControl extends AppCompatActivity {
             if (application.btAdapter != null) {
                 if(application.connectedThread != null) {
                     if (application.uv_ready) {
-                        mc_power_1.setVisibility(View.GONE);
+                        mc_power_1.setVisibility(View.INVISIBLE);
                         mc_timer.setVisibility(View.VISIBLE);
                         vibrator.vibrate(100);
                         application.clickUV();
@@ -299,19 +300,19 @@ public class MainControl extends AppCompatActivity {
             switch (application.s1_flag) {
                 case 1:
                     mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_red));
-                    mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_off_2));
+                    mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_led_btn_off));
                     mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_red));
                     mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_ready));
                     break;
                 case 2:
                     mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_yellow));
-                    mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_off_2));
+                    mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_led_btn_off));
                     mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_yellow));
                     mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_ready));
                     break;
                 case 3:
                     mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_green));
-                    mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_off_2));
+                    mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_led_btn_off));
                     mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_green));
                     mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_ready));
                     break;
@@ -350,13 +351,13 @@ public class MainControl extends AppCompatActivity {
         mc_timer_string.setText(Min + ":" + Second);
         application.state[2] = false;
         mc_timer.setVisibility(View.VISIBLE);
-        mc_power_1.setVisibility(View.GONE);
+        mc_power_1.setVisibility(View.INVISIBLE);
         mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_uv_btn_on));
     }
 
     void countDown(String time) {
         long conversionTime = 0;
-        mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_off_2));
+        mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_uv_btn_off));
         application.uv_ready = false;
 
         // 1000 단위가 1초

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical"
+    android:weightSum="1230"
+    tools:context=".MainControl">
+
+
+    <View
+        android:id="@+id/view19"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="100"
+        android:background="@drawable/mc_top_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/mc_bt_btn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/mc_bt_btn"
+        app:layout_constraintEnd_toStartOf="@+id/mc_setting_btn"
+        app:layout_constraintTop_toBottomOf="@+id/view19" />
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="43dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/mc_bt_string"
+        app:layout_constraintEnd_toEndOf="@+id/mc_bt_btn"
+        app:layout_constraintStart_toStartOf="@+id/mc_bt_btn"
+        app:layout_constraintTop_toBottomOf="@+id/mc_bt_btn" />
+
+    <ImageButton
+        android:id="@+id/mc_setting_btn"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/mc_setting_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view19" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="32dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/mc_setting_string"
+        app:layout_constraintEnd_toEndOf="@+id/mc_setting_btn"
+        app:layout_constraintStart_toStartOf="@+id/mc_setting_btn"
+        app:layout_constraintTop_toBottomOf="@+id/mc_setting_btn" />
+
+    <ImageButton
+        android:id="@+id/mc_power_1"
+        android:layout_width="168dp"
+        android:layout_height="168dp"
+        android:background="@drawable/mc_power_off"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view19"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mc_timer"
+        android:layout_width="168dp"
+        android:layout_height="168dp"
+        android:background="@drawable/mc_uv_min_circle"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view19"
+        app:layout_constraintVertical_bias="0.35000002">
+
+        <TextView
+            android:id="@+id/mc_timer_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="90"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="#272727"
+            android:textSize="38sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.42000002" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageButton
+        android:id="@+id/mc_power_2"
+        android:layout_width="128dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/mc_power_on_2"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+    <ImageButton
+        android:id="@+id/mc_led_mode"
+        android:layout_width="142dp"
+        android:layout_height="150dp"
+        android:background="@drawable/mc_led_mode_off"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mc_power_2"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageButton
+        android:id="@+id/mc_uv_mode"
+        android:layout_width="142dp"
+        android:layout_height="150dp"
+        android:background="@drawable/mc_uv_mode_off"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/mc_power_2"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/mc_power_1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="180dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

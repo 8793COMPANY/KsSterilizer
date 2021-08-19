@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainControl"
     android:orientation="vertical"
     android:background="#f8f8f8"
-    android:weightSum="1280">
+    android:weightSum="1230">
 
     <View
         android:layout_width="match_parent"
@@ -271,5 +271,5 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="156"></View>
+        android:layout_weight="106"></View>
 </LinearLayout>
