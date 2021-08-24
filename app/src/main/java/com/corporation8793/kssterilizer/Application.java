@@ -64,7 +64,10 @@ public class Application extends android.app.Application {
                 connectedThread.write("0");
                 state[0] = !state[0];
 
-                init();
+                if (!state[0]) {
+                    init();
+                }
+                Log.e("Application", "clickPower: " + state[0]);
             }
         }
     }
@@ -103,20 +106,18 @@ public class Application extends android.app.Application {
 
     boolean uv_delay_plus() {
         boolean b = false;
-        if(state[0]) {
-            if (btAdapter != null) {
-                if(connectedThread != null) {
-                    connectedThread.write("3");
-                    if (dm_level < 5) {
-                        dm_level += 1;
-                        b = true;
-                    } else {
-                        dm_level = 0;
-                        b = false;
-                    }
-
-                    Log.e("Application", "clickLED dm_level: " + dm_level);
+        if (btAdapter != null) {
+            if(connectedThread != null) {
+                connectedThread.write("3");
+                if (dm_level < 5) {
+                    dm_level += 1;
+                    b = true;
+                } else {
+                    dm_level = 0;
+                    b = false;
                 }
+
+                Log.e("Application", "clickLED dm_level: " + dm_level);
             }
         }
         return b;
@@ -124,23 +125,29 @@ public class Application extends android.app.Application {
 
     boolean uv_delay_minus() {
         boolean b = false;
-        if(state[0]) {
-            if (btAdapter != null) {
-                if(connectedThread != null) {
-                    connectedThread.write("4");
-                    if (dm_level > 0) {
-                        dm_level -= 1;
-                        b = true;
-                    } else {
-                        dm_level = 0;
-                        b = false;
-                    }
-
-                    Log.e("Application", "clickLED dm_level: " + dm_level);
+        if (btAdapter != null) {
+            if(connectedThread != null) {
+                connectedThread.write("4");
+                if (dm_level > 0) {
+                    dm_level -= 1;
+                    b = true;
+                } else {
+                    dm_level = 0;
+                    b = false;
                 }
+
+                Log.e("Application", "clickLED dm_level: " + dm_level);
             }
         }
         return b;
+    }
+
+    void init_for_uv_ready() {
+        if (btAdapter != null) {
+            if(connectedThread != null) {
+                connectedThread.write("5");
+            }
+        }
     }
 
     void init() {

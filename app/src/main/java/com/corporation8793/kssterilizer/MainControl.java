@@ -75,6 +75,8 @@ public class MainControl extends AppCompatActivity {
         mc_led_mode.setEnabled(false);
         mc_uv_mode.setEnabled(false);
 
+        disable();
+
         // 블루투스 버튼 클릭
         mc_bt_btn.setOnClickListener(v -> {
             if (application.btAdapter != null) {
@@ -134,6 +136,7 @@ public class MainControl extends AppCompatActivity {
             if (application.btAdapter != null) {
                 if(application.connectedThread != null) {
                     if (application.uv_ready) {
+                        // UV 동작
                         mc_power_1.setVisibility(View.INVISIBLE);
                         mc_timer.setVisibility(View.VISIBLE);
                         vibrator.vibrate(100);
@@ -153,15 +156,19 @@ public class MainControl extends AppCompatActivity {
 
         // LED 모드 버튼 클릭
         mc_led_mode.setOnClickListener(v -> {
-            application.clickLED();
-            view_clickLED();
-            application.uv_ready = false;
-            prevent_duplicateClick();
+            if(application.state[0]) {
+                application.clickLED();
+                view_clickLED();
+                application.uv_ready = false;
+                prevent_duplicateClick();
+            }
         });
 
         // UV 모드드 버튼 클릭
         mc_uv_mode.setOnClickListener(v -> {
-            view_clickUV();
+            if (application.state[0]) {
+                view_clickUV();
+            }
         });
     }
 
@@ -228,6 +235,7 @@ public class MainControl extends AppCompatActivity {
                     new Handler().postDelayed(() -> {
                         //딜레이 후 시작할 코드 작성
                         Toast.makeText(getApplicationContext(), "connected to " + name, Toast.LENGTH_SHORT).show();
+                        disable();
                         //connectedThread.write("A");
 //                        dialog.cancel();
                     }, 1000);
@@ -239,6 +247,7 @@ public class MainControl extends AppCompatActivity {
     void getPermission() {
         // Get permission
         String[] permission_list = {
+                Manifest.permission.BLUETOOTH,
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION
         };
@@ -292,6 +301,8 @@ public class MainControl extends AppCompatActivity {
         Log.e("MainControl", "view_clickLED s1_flag: " + application.s1_flag);
         mc_timer.setVisibility(View.GONE);
         mc_power_1.setVisibility(View.VISIBLE);
+        application.uv_ready = false;
+        application.state[2] = false;
 
         if (application.state[1]) {
             mc_power_1.setEnabled(false);
@@ -325,6 +336,7 @@ public class MainControl extends AppCompatActivity {
             mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_off_2));
             mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_ready));
             mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_ready));
+            Toast.makeText(this, "LED 삼색이 꺼집니다", Toast.LENGTH_SHORT).show();
         }
         vibrator.vibrate(100);
     }
@@ -332,6 +344,10 @@ public class MainControl extends AppCompatActivity {
     void view_clickUV() {
         if (application.state[0]) {
             initClock();
+            application.state[1] = false;
+            application.s1_flag = 0;
+            application.init_for_uv_ready();
+            prevent_duplicateClick();
             mc_power_1.setEnabled(false);
             mc_power_2.setEnabled(true);
             mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_uv_min_circle));
@@ -353,6 +369,22 @@ public class MainControl extends AppCompatActivity {
         mc_timer.setVisibility(View.VISIBLE);
         mc_power_1.setVisibility(View.INVISIBLE);
         mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_uv_btn_on));
+    }
+
+    void disable() {
+        if (application.btAdapter != null) {
+            if(application.connectedThread != null) {
+                mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_on));
+                mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_on_2));
+                mc_bt_btn.setBackground(getResources().getDrawable(R.drawable.mc_bt_btn));
+                mc_setting_btn.setBackground(getResources().getDrawable(R.drawable.mc_setting_btn));
+            } else {
+                mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_disable));
+                mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_disable_2));
+                mc_bt_btn.setBackground(getResources().getDrawable(R.drawable.mc_bt_btn_disable));
+                mc_setting_btn.setBackground(getResources().getDrawable(R.drawable.mc_setting_btn_disable));
+            }
+        }
     }
 
     void countDown(String time) {
@@ -433,7 +465,7 @@ public class MainControl extends AppCompatActivity {
                 mc_timer_string.setText("00:00");
                 application.state[2] = false;
 
-                if (!application.uv_ready && application.state[0]) {
+                if (!application.uv_ready && application.state[0] && !application.state[1]) {
                     new Handler().postDelayed(() -> {
                         initClock();
                     }, 2000);
