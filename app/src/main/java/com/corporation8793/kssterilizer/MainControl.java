@@ -347,14 +347,13 @@ public class MainControl extends AppCompatActivity {
             application.state[1] = false;
             application.s1_flag = 0;
             application.init_for_uv_ready();
-            prevent_duplicateClick();
             mc_power_1.setEnabled(false);
             mc_power_2.setEnabled(true);
             mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_uv_min_circle));
             mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_uv_btn_on));
             mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_ready));
             mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_on));
-            Toast.makeText(this, "UV 살균이 준비되었습니다", Toast.LENGTH_SHORT).show();
+            prevent_duplicateClick();
         }
         vibrator.vibrate(100);
     }
