@@ -19,8 +19,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
-
 import com.corporation8793.kssterilizer.Thread.ConnectedThread;
 
 import java.io.IOException;

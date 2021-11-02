@@ -236,8 +236,6 @@ public class MainControl extends AppCompatActivity {
                         //딜레이 후 시작할 코드 작성
                         Toast.makeText(getApplicationContext(), "connected to " + name, Toast.LENGTH_SHORT).show();
                         disable();
-                        //connectedThread.write("A");
-//                        dialog.cancel();
                     }, 1000);
                 }
             }
@@ -373,11 +371,21 @@ public class MainControl extends AppCompatActivity {
     void disable() {
         if (application.btAdapter != null) {
             if(application.connectedThread != null) {
+                mc_timer.setVisibility(View.GONE);
+                if (application.state[0]) {
+                    application.clickPower();
+                }
+                application.init();
+                mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_off));
+                mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_off));
                 mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_on));
                 mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_on_2));
                 mc_bt_btn.setBackground(getResources().getDrawable(R.drawable.mc_bt_btn));
                 mc_setting_btn.setBackground(getResources().getDrawable(R.drawable.mc_setting_btn));
             } else {
+                mc_timer.setVisibility(View.GONE);
+                mc_led_mode.setBackground(getResources().getDrawable(R.drawable.mc_led_mode_off));
+                mc_uv_mode.setBackground(getResources().getDrawable(R.drawable.mc_uv_mode_off));
                 mc_power_1.setBackground(getResources().getDrawable(R.drawable.mc_power_disable));
                 mc_power_2.setBackground(getResources().getDrawable(R.drawable.mc_power_disable_2));
                 mc_bt_btn.setBackground(getResources().getDrawable(R.drawable.mc_bt_btn_disable));
